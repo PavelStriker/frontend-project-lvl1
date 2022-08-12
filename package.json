@@ -1,6 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "frontend project braingames",
   "main": "index.js",
   "scripts": {
@@ -15,6 +16,8 @@
   "bugs": {
     "url": "https://github.com/PavelStriker/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/PavelStriker/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/PavelStriker/frontend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
-
