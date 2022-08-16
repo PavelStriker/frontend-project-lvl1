@@ -4,6 +4,10 @@
   "type": "module",
   "description": "frontend project braingames",
   "main": "index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,4 +31,5 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.8.2"
   }
+
 }
