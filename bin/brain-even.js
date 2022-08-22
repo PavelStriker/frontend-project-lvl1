@@ -1,4 +1,3 @@
 #!/usr/bin/env node
-import { bg_even } from '../src/evenGame.js';
-
-bg_even();
+import { bgEven } from '../src/evenGame.js';
+bgEven();
