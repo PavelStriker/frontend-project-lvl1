@@ -12,14 +12,14 @@ export const bgProg = () => {
     const arr1 = [];
 
     const isProgression = () => {
-    const number1 = randomNumber(10);
-    const multiplier = Math.round(Math.random() * 2 + 1)
-    const number2 = multiplier;
-    for (let i = 0; i < number2 * 10; i += number2) {
+      const number1 = randomNumber(10);
+      const multiplier = Math.round(Math.random() * 2 + 1);
+      const number2 = multiplier;
+      for (let i = 0; i < number2 * 10; i += number2) {
         arr1.push(number1 + i);
-    }
-    return arr1;
-};
+      }
+      return arr1;
+    };
 
     isProgression();
 
@@ -28,7 +28,7 @@ export const bgProg = () => {
     const hiddenNumb = arr1[num1];
     const arr2 = arr1;
     arr2[num1] = '..';
-    let str = arr2.join(' ');
+    const str = arr2.join(' ');
     console.log(`Question: ${str}`);
     const answer = readlineSync.question('Your answer: ');
 
@@ -42,4 +42,3 @@ export const bgProg = () => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-
