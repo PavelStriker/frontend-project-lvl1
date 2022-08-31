@@ -16,9 +16,11 @@ export const isPrime = (number) => {
 
 export const bgPrime = () => {
 
-  console.log('May I have your name?');
+  console.log('Welcome to the Brain Games!\nMay I have your name?');
+
   const name = readlineSync.question('Your answer: ');
   console.log(`Hello, ${name}!`);
+
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   const randomNumber = (maxNumb) => Math.floor(Math.random() * maxNumb);

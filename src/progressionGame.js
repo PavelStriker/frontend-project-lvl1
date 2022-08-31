@@ -1,9 +1,11 @@
 import readlineSync from 'readline-sync';
 
 export const bgProg = () => {
-  console.log('May I have your name?');
+  console.log('Welcome to the Brain Games!\nMay I have your name?');
+
   const name = readlineSync.question('Your answer: ');
   console.log(`Hello, ${name}!`);
+
   console.log('What number is missing in the progression?');
 
   const randomNumber = (maxNumb) => Math.floor(Math.random() * maxNumb);

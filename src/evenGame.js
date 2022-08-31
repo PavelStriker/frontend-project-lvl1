@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
 export const bgEven = () => {
-  console.log('May I have your name?');
+  console.log('Welcome to the Brain Games!\nMay I have your name?');
+
   const name = readlineSync.question('Your answer: ');
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const randomNumber = (maxNumb) => Math.floor(Math.random() * maxNumb);
 
