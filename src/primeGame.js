@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const bgPrime = () => {
-  const isPrime = (number) => {
+export const isPrime = (number) => {
     if (number < 2) {
       return false;
     }
@@ -14,6 +13,8 @@ export const bgPrime = () => {
     }
     return true;
   };
+
+export const bgPrime = () => {
 
   console.log('May I have your name?');
   const name = readlineSync.question('Your answer: ');
