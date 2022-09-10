@@ -1,46 +1,40 @@
-import readlineSync from 'readline-sync';
+import makeRandomNumber from '../math.js';
+import { engine } from '../engine.js';
 
-export const bgProg = () => {
-  console.log('Welcome to the Brain Games!\nMay I have your name?');
-
-  const name = readlineSync.question('Your answer: ');
-  console.log(`Hello, ${name}!`);
-
-  console.log('What number is missing in the progression?');
-
-  const randomNumber = (maxNumb) => Math.floor(Math.random() * maxNumb);
-
-  for (let i = 0; i < 3; i += 1) {
-    const arr1 = [];
-
-    const isProgression = () => {
-      const number1 = randomNumber(10);
-      const multiplier = Math.round(Math.random() * 2 + 1);
-      const number2 = multiplier;
-      for (let i = 0; i < number2 * 10; i += number2) {
-        arr1.push(number1 + i);
-      }
-      return arr1;
-    };
-
-    isProgression();
-
-    const getMultiplier = Math.round(Math.random() * 9);
-    const num1 = getMultiplier;
-    const hiddenNumb = arr1[num1];
-    const arr2 = arr1;
-    arr2[num1] = '..';
-    const str = arr2.join(' ');
-    console.log(`Question: ${str}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    if (Number(answer) === Number(hiddenNumb)) {
-      console.log('Correct!');
-    } else {
-      const anotherVar = (Number(answer) === Number(hiddenNumb) ? Number(answer) : Number(hiddenNumb));
-      const errorMessage = console.log(`"${answer}" is wrong answer ;(. Correct answer was '${anotherVar}'. \nLet's try again, ${name}!`);
-      return errorMessage;
+const minStartNum = 0;
+const maxStartNum = 10;
+const minProgressNum = 0;
+const maxProgressNum = 10;
+const makeProgress = (count) => {
+  const start = makeRandomNumber(minStartNum, maxStartNum);
+  const diff = makeRandomNumber(minProgressNum, maxProgressNum);
+  const iter = (iterCount, progression = []) => {
+    if (iterCount === 0) {
+      return progression;
     }
-  }
-  console.log(`Congratulations, ${name}!`);
+
+    const iterProgression = [start + diff * iterCount, ...progression];
+
+    return iter(iterCount - 1, iterProgression);
+  };
+
+  return iter(count);
 };
+
+const progressionLength = 10;
+const getGameData = () => {
+  const progression = makeProgress(progressionLength);
+  const switchedIndex = makeRandomNumber(0, progression.length - 2);
+  const rigthAnswer = String(progression[switchedIndex]);
+  progression[switchedIndex] = '...';
+  const question = progression.join(' ');
+
+
+  return [rigthAnswer, question];
+};
+
+
+const greeting = 'What number is missing in the progression?';
+const bgProgStart = () => engine(greeting, getGameData);
+
+export default bgProgStart;

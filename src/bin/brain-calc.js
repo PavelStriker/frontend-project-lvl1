@@ -1,4 +1,4 @@
-#!/usr/bin/env node
-import { bgCalc } from '../src/calcGame.js';
+#! /usr/bin/env node
+import bgCalcStart from '../games/calcGame.js';
 
-bgCalc();
+bgCalcStart();

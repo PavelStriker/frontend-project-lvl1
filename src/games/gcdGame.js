@@ -1,36 +1,25 @@
-import readlineSync from 'readline-sync';
+import makeRandomNumber from '../math.js';
+import { engine } from '../engine.js';
 
-export const gcd = (x, y) => {
-  if (y > x) return gcd(y, x);
-  if (!y) return x;
-  return gcd(y, x % y);
-};
-
-export const bgGcd = () => {
-  console.log('Welcome to the Brain Games!\nMay I have your name?');
-
-  const name = readlineSync.question('Your answer: ');
-  console.log(`Hello, ${name}!`);
-
-  console.log('Find the greatest common divisor of given numbers.');
-
-  const randomNumber = (maxNumb) => Math.floor(Math.random() * maxNumb);
-
-  for (let i = 0; i < 3; i += 1) {
-    const number1 = randomNumber(100);
-    const number2 = randomNumber(100);
-    console.log(`Question: ${number1} ${number2}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    const gcdCheck = gcd(number1, number2);
-
-    if (Number(answer) === Number(gcdCheck)) {
-      console.log('Correct!');
-    } else {
-      const anotherVar = (Number(answer) === Number(gcdCheck) ? Number(answer) : Number(gcdCheck));
-      const errorMessage = console.log(`"${answer}" is wrong answer ;(. Correct answer was '${anotherVar}'. \nLet's try again, ${name}!`);
-      return errorMessage;
-    }
+const findGCD = (a, b) => {
+  if (b === 0) {
+    return a;
   }
-  console.log(`Congratulations, ${name}!`);
+  return findGCD(b, a % b);
 };
+
+const minNum = 1;
+const maxNum = 25;
+const getGameData = () => {
+  const firstNum = makeRandomNumber(minNum, maxNum);
+  const secondNum = makeRandomNumber(minNum, maxNum);
+  const question = `${firstNum} ${secondNum}`;
+  const rightAnswer = String(findGCD(firstNum, secondNum));
+
+  return [rightAnswer, question];
+};
+
+const greeting = 'Find the greatest common divisor of given numbers';
+const bgGcdStart = () => engine(greeting, getGameData);
+
+export default bgGcdStart;
