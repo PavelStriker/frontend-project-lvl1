@@ -9,7 +9,7 @@ export const engine = (gameDescription, getGameData) => {
 
       for (let i = 0; i < 3; i += 1) {
       const [rigthAnswer, question] = getGameData();
-      console.log(`Question : ${question}`);
+      console.log(`Question: ${question}`);
       const answer = readlineSync.question('Your answer: ');
 
         if (answer !== rigthAnswer) {

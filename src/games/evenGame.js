@@ -4,10 +4,9 @@ import { engine } from '../engine.js';
 const bgEven = (num) => num % 2 === 0;
 
 const minNum = 1;
-const maxNum = 9;
+const maxNum = 500;
 const getGameData = () => {
-  const question1 = makeRandomNumber(minNum, maxNum);
-  const question = Number(question1);
+  const question = makeRandomNumber(minNum, maxNum);
   const rigthAnswer = bgEven(question) ? 'yes' : 'no';
 
   return [rigthAnswer, question];
