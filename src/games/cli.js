@@ -6,4 +6,3 @@ export const bgStart = () => {
   const name = readlineSync.question('Your answer: ');
   console.log(`Hello, ${name}!`);
 };
-

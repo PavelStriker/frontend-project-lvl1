@@ -30,10 +30,8 @@ const getGameData = () => {
   progression[switchedIndex] = '..';
   const question = progression.join(' ');
 
-
   return [rigthAnswer, question];
 };
-
 
 const greeting = 'What number is missing in the progression?';
 const bgProgStart = () => engine(greeting, getGameData);

@@ -2,4 +2,3 @@
 import bgPrimeStart from '../src/games/primeGame.js';
 
 bgPrimeStart();
-
