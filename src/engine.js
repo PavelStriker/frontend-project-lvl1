@@ -14,7 +14,7 @@ export const engine = (gameDescription, getGameData) => {
 
         if (answer !== rigthAnswer) {
           console.log(`'${answer}' is wrong answer, corrent answer was '${rigthAnswer}'`);
-          console.log(`Let's try again, ${name}`);
+          console.log(`Let's try again, ${name}!`);
           return false;
       }
       console.log('Correct!');
