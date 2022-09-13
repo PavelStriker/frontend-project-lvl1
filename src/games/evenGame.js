@@ -1,5 +1,5 @@
 import makeRandomNumber from '../math.js';
-import { engine } from '../engine.js';
+import engine from '../engine.js';
 
 const bgEven = (num) => num % 2 === 0;
 

@@ -1,5 +1,5 @@
 import makeRandomNumber from '../math.js';
-import { engine } from '../engine.js';
+import engine from '../engine.js';
 
 const bgCalc = (sign, num1, num2) => {
   let rigthAnswer;

@@ -1,5 +1,5 @@
 import makeRandomNumber from '../math.js';
-import { engine } from '../engine.js';
+import engine from '../engine.js';
 
 const minStartNum = 0;
 const maxStartNum = 10;

@@ -1,5 +1,5 @@
 import makeRandomNumber from '../math.js';
-import { engine } from '../engine.js';
+import engine from '../engine.js';
 
 const findGCD = (a, b) => {
   if (b === 0) {

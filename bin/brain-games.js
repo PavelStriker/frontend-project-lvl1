@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 import bgStart from '../src/games/cli.js';
 
 bgStart();
