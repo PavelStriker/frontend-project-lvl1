@@ -22,11 +22,12 @@ const makeProgress = (count) => {
 };
 
 const progressionLength = 10;
+
 const getGameData = () => {
   const progression = makeProgress(progressionLength);
   const switchedIndex = makeRandomNumber(0, progression.length - 2);
   const rigthAnswer = String(progression[switchedIndex]);
-  progression[switchedIndex] = '...';
+  progression[switchedIndex] = '..';
   const question = progression.join(' ');
 
 
