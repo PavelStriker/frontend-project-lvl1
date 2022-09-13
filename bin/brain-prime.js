@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import bgPrimeStart from '../games/primeGame.js';
+import bgPrimeStart from '../src/games/primeGame.js';
 
 bgPrimeStart();
 

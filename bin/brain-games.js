@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import { bgStart } from '../games/cli.js';
+import { bgStart } from '../src/games/cli.js';
 bgStart();

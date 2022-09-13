@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import bgProgStart from '../games/progressionGame.js';
+import bgProgStart from '../src/games/progressionGame.js';
 
 bgProgStart();
