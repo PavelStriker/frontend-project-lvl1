@@ -1,5 +1,7 @@
-import makeRandomNumber from '../math.js';
+import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
+
+const descr = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -19,16 +21,14 @@ const isPrime = (num) => {
   return true;
 };
 
-const minNum = 1;
-const maxNum = 409;
 const getGameData = () => {
+  const minNum = 1;
+  const maxNum = 409;
   const question = makeRandomNumber(minNum, maxNum);
   const rigthAnswer = isPrime(question) ? 'yes' : 'no';
-
   return [rigthAnswer, question];
 };
 
-const greeting = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const bgPrimeStart = () => engine(greeting, getGameData);
+const primeStart = () => engine(descr, getGameData);
 
-export default bgPrimeStart;
+export default primeStart;

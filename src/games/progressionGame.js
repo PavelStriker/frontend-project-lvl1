@@ -1,11 +1,13 @@
-import makeRandomNumber from '../math.js';
+import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const minStartNum = 0;
-const maxStartNum = 10;
-const minProgressNum = 0;
-const maxProgressNum = 10;
+const descr = 'What number is missing in the progression?';
+
 const makeProgress = (count) => {
+  const minStartNum = 0;
+  const maxStartNum = 10;
+  const minProgressNum = 0;
+  const maxProgressNum = 10;
   const start = makeRandomNumber(minStartNum, maxStartNum);
   const diff = makeRandomNumber(minProgressNum, maxProgressNum);
   const iter = (iterCount, progression = []) => {
@@ -33,7 +35,6 @@ const getGameData = () => {
   return [rigthAnswer, question];
 };
 
-const greeting = 'What number is missing in the progression?';
-const bgProgStart = () => engine(greeting, getGameData);
+const progStart = () => engine(descr, getGameData);
 
-export default bgProgStart;
+export default progStart;

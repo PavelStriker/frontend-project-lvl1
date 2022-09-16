@@ -1,25 +1,26 @@
-import makeRandomNumber from '../math.js';
+import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const findGCD = (a, b) => {
+const descr = 'Find the greatest common divisor of given numbers';
+
+const getGCD = (a, b) => {
   if (b === 0) {
     return a;
   }
-  return findGCD(b, a % b);
+  return getGCD(b, a % b);
 };
 
-const minNum = 1;
-const maxNum = 25;
 const getGameData = () => {
+  const minNum = 1;
+  const maxNum = 25;
   const firstNum = makeRandomNumber(minNum, maxNum);
   const secondNum = makeRandomNumber(minNum, maxNum);
   const question = `${firstNum} ${secondNum}`;
-  const rightAnswer = String(findGCD(firstNum, secondNum));
+  const rightAnswer = String(getGCD(firstNum, secondNum));
 
   return [rightAnswer, question];
 };
 
-const greeting = 'Find the greatest common divisor of given numbers';
-const bgGcdStart = () => engine(greeting, getGameData);
+const gcdStart = () => engine(descr, getGameData);
 
-export default bgGcdStart;
+export default gcdStart;

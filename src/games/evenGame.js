@@ -1,18 +1,19 @@
-import makeRandomNumber from '../math.js';
+import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const bgEven = (num) => num % 2 === 0;
+const descr = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-const minNum = 1;
-const maxNum = 500;
+const isEven = (num) => num % 2 === 0;
+
 const getGameData = () => {
+  const minNum = 1;
+  const maxNum = 500;
   const question = makeRandomNumber(minNum, maxNum);
-  const rigthAnswer = bgEven(question) ? 'yes' : 'no';
+  const rigthAnswer = isEven(question) ? 'yes' : 'no';
 
   return [rigthAnswer, question];
 };
 
-const greeting = 'Answer "yes" if the number is even, otherwise answer "no"';
-const bgEvenStart = () => engine(greeting, getGameData);
+const gameStart = () => engine(descr, getGameData);
 
-export default bgEvenStart;
+export default gameStart;
