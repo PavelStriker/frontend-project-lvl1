@@ -22,9 +22,7 @@ const isPrime = (num) => {
 };
 
 const getGameData = () => {
-  const minNum = 1;
-  const maxNum = 409;
-  const question = makeRandomNumber(minNum, maxNum);
+  const question = makeRandomNumber(1, 409);
   const rigthAnswer = isPrime(question) ? 'yes' : 'no';
   return [rigthAnswer, question];
 };

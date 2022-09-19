@@ -6,9 +6,7 @@ const descr = 'Answer "yes" if the number is even, otherwise answer "no"';
 const isEven = (num) => num % 2 === 0;
 
 const getGameData = () => {
-  const minNum = 1;
-  const maxNum = 500;
-  const question = makeRandomNumber(minNum, maxNum);
+  const question = makeRandomNumber(1, 101);
   const rigthAnswer = isEven(question) ? 'yes' : 'no';
 
   return [rigthAnswer, question];
