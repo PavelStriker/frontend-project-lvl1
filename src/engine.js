@@ -19,7 +19,8 @@ const engine = (description, getGameData) => {
     }
     console.log('Correct!');
   }
-  console.log(`Congratulations, ${name}!`);
+  const congrats = console.log(`Congratulations, ${name}!`);
+  return congrats;
 };
 
 export default engine;
