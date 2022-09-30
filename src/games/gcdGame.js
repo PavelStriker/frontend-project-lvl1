@@ -1,7 +1,7 @@
 import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const descr = 'Find the greatest common divisor of given numbers';
+const description = 'Find the greatest common divisor of given numbers';
 
 const getGCD = (a, b) => {
   if (b === 0) {
@@ -21,6 +21,6 @@ const getGameData = () => {
   return [rightAnswer, question];
 };
 
-const gcdStart = () => engine(descr, getGameData);
+const gcdStart = () => engine(description, getGameData);
 
 export default gcdStart;

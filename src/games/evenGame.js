@@ -1,7 +1,7 @@
 import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const descr = 'Answer "yes" if the number is even, otherwise answer "no"';
+const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 
 const isEven = (num) => num % 2 === 0;
 
@@ -12,6 +12,6 @@ const getGameData = () => {
   return [rigthAnswer, question];
 };
 
-const gameStart = () => engine(descr, getGameData);
+const gameStart = () => engine(description, getGameData);
 
 export default gameStart;

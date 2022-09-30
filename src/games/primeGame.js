@@ -1,7 +1,7 @@
 import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const descr = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -27,6 +27,6 @@ const getGameData = () => {
   return [rigthAnswer, question];
 };
 
-const primeStart = () => engine(descr, getGameData);
+const primeStart = () => engine(description, getGameData);
 
 export default primeStart;

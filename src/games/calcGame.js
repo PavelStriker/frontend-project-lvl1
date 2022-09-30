@@ -1,7 +1,7 @@
 import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const descr = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const bgCalculate = (sign, num1, num2) => {
   let rigthAnswer;
@@ -34,6 +34,6 @@ const getGameData = () => {
   return [rigthAnswer, question];
 };
 
-const calculateStart = () => engine(descr, getGameData);
+const calculateStart = () => engine(description, getGameData);
 
 export default calculateStart;

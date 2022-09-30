@@ -1,7 +1,7 @@
 import makeRandomNumber from '../helper.js';
 import engine from '../engine.js';
 
-const descr = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const makeProgress = (count) => {
   const minStartNum = 0;
@@ -35,6 +35,6 @@ const getGameData = () => {
   return [rigthAnswer, question];
 };
 
-const progStart = () => engine(descr, getGameData);
+const progStart = () => engine(description, getGameData);
 
 export default progStart;
